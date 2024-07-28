@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"daef8ff40e528137","type":"file","file":"IMAGENS/Pasted image 20240727224915.png","x":-260,"y":-241,"width":400,"height":241},
+		{"id":"91d8d6adafa4ee3e","type":"text","text":"O conjugado ($\\tau$) ou a ação de fazer girar o cilindro depende de (1) o valor da força aplicada e (2) a distância entre o eixo de rotação e a reta de ação da força.","x":-260,"y":60,"width":400,"height":118},
+		{"id":"864d361e123524f6","type":"file","file":"IMAGENS/Pasted image 20240727225150.png","x":220,"y":-295,"width":380,"height":295},
+		{"id":"d3586119860e2871","type":"text","text":"Se **r** for um vetor que aponta **desde o eixo de rotação até o ponto de aplicação da força** e se **F** for a força aplicada, então o conjugado poderá ser descrito como\n\n$$\n\\tau = r \\cdot F \\cdot sen\\theta\n$$","x":210,"y":60,"width":400,"height":162}
+	],
+	"edges":[
+		{"id":"d9d20b26443ad08b","fromNode":"daef8ff40e528137","fromSide":"bottom","toNode":"91d8d6adafa4ee3e","toSide":"top"},
+		{"id":"242826937f3ebc65","fromNode":"864d361e123524f6","fromSide":"bottom","toNode":"d3586119860e2871","toSide":"top"}
+	]
+}

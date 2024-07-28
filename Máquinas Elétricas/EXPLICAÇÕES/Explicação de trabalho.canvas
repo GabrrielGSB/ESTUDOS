@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"14b0f025e53e43f7","x":-260,"y":-600,"width":485,"height":560,"type":"text","text":"**No movimento retilíneo**, o trabalho é definido como a aplicação de uma força que se desloca por uma distância.\n$$\nW = \\int{F dr}\n$$\n**Caso a  força seja colinear com o sentido do movimento**. No caso especial de uma força constante aplicada de forma colinear com o sentido do movimento, essa equação torna-se simplesmente\n\n$$\nW = F \\cdot r\n$$\n**No movimento de rotação**, o trabalho é a aplicação de um conjugado por um ângulo. Aqui, a equação do trabalho é\n\n$$\nW = \\int{\\tau d\\theta}\n$$\ne, **se o conjugado for constante**, teremos\n\n$$\nW = \\tau \\cdot \\theta\n$$"}
+	],
+	"edges":[]
+}

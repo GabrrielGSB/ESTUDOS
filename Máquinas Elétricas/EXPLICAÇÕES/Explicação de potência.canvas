@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"ae71fce4cb53eb12","x":-247,"y":-249,"width":527,"height":409,"type":"text","text":"A potência é a taxa de produção de trabalho, ou o incremento de trabalho por unidade de tempo\n\n$$\nP = \\frac{dW}{dt}\n$$\n\nPor essa definição, e assumindo que **a força é constante e colinear com o sentido do movimento**, a potência é dada por\n\n$$\nP = F \\cdot v\n$$\n**Sendo $v$ a velocidade.\n**\nDe modo similar, assumindo um conjugado constante, a potência no movimento de rotação é dada por\n$$\nP = \\tau \\cdot w\n$$\n**Sendo $w$ a velocidade angular**"}
+	],
+	"edges":[]
+}
