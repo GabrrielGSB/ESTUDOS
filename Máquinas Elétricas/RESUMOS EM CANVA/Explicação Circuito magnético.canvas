@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"227581365109f5ce","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240728163728.png","x":-125,"y":-260,"width":525,"height":198},
+		{"id":"1440f232a8f1721b","type":"text","text":"No circuito elétrico, o fluxo de corrente é acionado por uma tensão ou força eletromotriz. Por analogia, a grandeza correspondente no circuito magnético é denominada \n*força magnetomotriz* (FMM). A força magnetomotriz do circuito magnético é igual ao fluxo efetivo de corrente aplicado ao núcleo, ou:\n\n$$\nFMM = N \\cdot i\n$$","x":-387,"y":0,"width":525,"height":210},
+		{"id":"55f26f327a3d116c","type":"text","text":"No circuito elétrico, a tensão aplicada faz com que circule uma corrente I. De modo similar, em um circuito magnético, a força magnetomotriz aplicada faz com que um fluxo $\\phi$ seja produzido. A relação entre tensão e corrente em um circuito elétrico é a lei de Ohm ($V \\cdot IR$). Do mesmo modo, a relação entre força magnetomotriz e fluxo é:\n\n$$\nFMM = \\phi \\cdot R\n$$","x":138,"y":0,"width":525,"height":210},
+		{"id":"5c42c22081403d08","type":"text","text":"**Sendo $R$ a relutância do circuito**","x":720,"y":75,"width":250,"height":60},
+		{"id":"786fe6511d5d8548","type":"text","text":"$$\n\\phi = B \\cdot A = \\frac{\\mu \\cdot N \\cdot i \\cdot A}{l_{n}}\n$$\n\n$$\n= N\\cdot i \\Big(\\frac{\\mu \\cdot A}{l_{n}}\\Big)\n$$\n\n$$\n\\phi = F \\Big( \\frac{\\mu \\cdot A}{l_{n}} \\Big)\n$$","x":720,"y":186,"width":263,"height":229},
+		{"id":"50fe81c7156368d5","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240728164038.png","x":-171,"y":301,"width":618,"height":457},
+		{"id":"8c64544cbf038481","type":"text","text":"Logo a Relutância $R$ é:\n$$\nR = \\frac{l_{n}}{\\mu \\cdot A}\n$$","x":720,"y":470,"width":263,"height":130},
+		{"id":"f3d3500c6fd54ed5","type":"text","text":"**As mesmas regras de associação de resistores se aplicam.**","x":1040,"y":488,"width":250,"height":95}
+	],
+	"edges":[
+		{"id":"d161c301aa301381","fromNode":"227581365109f5ce","fromSide":"bottom","toNode":"1440f232a8f1721b","toSide":"top"},
+		{"id":"06b423c95fd10e90","fromNode":"227581365109f5ce","fromSide":"bottom","toNode":"55f26f327a3d116c","toSide":"top"},
+		{"id":"8eb9fa57f3e8c1b4","fromNode":"55f26f327a3d116c","fromSide":"bottom","toNode":"50fe81c7156368d5","toSide":"top"},
+		{"id":"8824224771c965f2","fromNode":"55f26f327a3d116c","fromSide":"right","toNode":"5c42c22081403d08","toSide":"left"},
+		{"id":"bd66dc8a69c1132a","fromNode":"55f26f327a3d116c","fromSide":"right","toNode":"786fe6511d5d8548","toSide":"left"},
+		{"id":"02f7df32f1f36702","fromNode":"1440f232a8f1721b","fromSide":"bottom","toNode":"50fe81c7156368d5","toSide":"top"},
+		{"id":"dd2fde5fe7c1e304","fromNode":"786fe6511d5d8548","fromSide":"bottom","toNode":"8c64544cbf038481","toSide":"top"},
+		{"id":"8080b5779b85b220","fromNode":"8c64544cbf038481","fromSide":"right","toNode":"f3d3500c6fd54ed5","toSide":"left"}
+	]
+}

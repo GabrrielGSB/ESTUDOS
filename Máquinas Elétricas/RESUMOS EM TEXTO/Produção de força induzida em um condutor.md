@@ -1,0 +1,1 @@
+[[Produção de força induzida em um condutor|Link do canva]]

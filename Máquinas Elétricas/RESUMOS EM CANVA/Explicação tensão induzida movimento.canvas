@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"103691eb6a1fd890","type":"text","text":"Há uma terceira forma importante pela qual um campo magnético interage com seu \nentorno. **Se um condutor estiver orientado adequadamente e se deslocando dentro de** \n**um campo magnético, então uma tensão será induzida nele**. A tensão induzida no condutor é dada por","x":-260,"y":-220,"width":420,"height":240},
+		{"id":"37d98b9959b6469d","type":"text","text":"$$\ne_{ind} = (v \\space \\times \\space B) \\bullet I\n$$","x":200,"y":-140,"width":179,"height":80},
+		{"id":"158e44e20d755f8d","type":"text","text":"O vetor **l** tem a mesma direção do condutor e aponta para a extremidade que faz o menor ângulo com o vetor **v** $\\times$ **B**. A tensão no condutor é produzida de modo que o polo positivo aponta no mesmo sentido do vetor **v** $\\times$ **B**. Os exemplos seguintes ilustram esse conceito","x":-260,"y":60,"width":420,"height":180},
+		{"id":"d160344380a5bab8","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240731121300.png","x":-820,"y":-182,"width":499,"height":404},
+		{"id":"244a1413130a5a9e","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240731121346.png","x":-793,"y":300,"width":446,"height":506},
+		{"id":"3f6f5eff4824bd56","type":"text","text":"Exemplo com condutor não paralelo ao vetor **v** $\\times$ **B**","x":-181,"y":300,"width":262,"height":63},
+		{"id":"815303eba57613d1","type":"text","text":"$$\ne_{ind} = \\frac{v\\cdot B \\cdot sen90°}{cos30°} \n$$","x":-145,"y":420,"width":190,"height":100}
+	],
+	"edges":[
+		{"id":"9904899aa99c0e31","fromNode":"103691eb6a1fd890","fromSide":"right","toNode":"37d98b9959b6469d","toSide":"left"},
+		{"id":"9bf37b93a597c6b2","fromNode":"37d98b9959b6469d","fromSide":"bottom","toNode":"158e44e20d755f8d","toSide":"right"},
+		{"id":"86e4942e847d12e4","fromNode":"158e44e20d755f8d","fromSide":"left","toNode":"d160344380a5bab8","toSide":"right"},
+		{"id":"23e56222aa00abb1","fromNode":"244a1413130a5a9e","fromSide":"right","toNode":"3f6f5eff4824bd56","toSide":"left"},
+		{"id":"712b469b87ca2300","fromNode":"3f6f5eff4824bd56","fromSide":"bottom","toNode":"815303eba57613d1","toSide":"top"}
+	]
+}

@@ -1,0 +1,6 @@
+![[Pasted image 20240728180714.png]]
+Assuma que inicialmente o fluxo é zero no núcleo. Quando a corrente começa a ser aumentada, o fluxo no núcleo percorre o caminho ab da Figura 1-11b. Essa é basicamente a curva de saturação mostrada na Figura 1-10. Entretanto, quando a corrente volta a diminuir, o fluxo percorrido segue um caminho diferente daquele que foi percorrido quando a corrente foi incrementada.
+
+**O caminho bcdeb na Figura 1-11b, que é percorrido quando há mudança na intensidade da corrente aplicada, é denominado laço de histerese.**
+
+Observe que, se uma força magnetomotriz elevada for aplicada primeiro ao núcleo e removida em seguida, então o fluxo no núcleo seguirá o caminho abc. **Quando a força magnetomotriz é removida, o fluxo no núcleo não vai até zero**. Em vez disso, um campo magnético permanece no núcleo. **Esse campo magnético é denominado fluxo residual do núcleo**. Os ímãs permanentes são produzidos exatamente dessa maneira. **Para que o fluxo seja forçado a voltar a zero, um valor de força magnetomotriz conhecido como força magnetomotriz coercitiva (Fc) deve ser aplicado ao núcleo no sentido oposto.**

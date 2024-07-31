@@ -1,0 +1,1 @@
+[[Explicação tensão induzida movimento.canvas|link do canva]]
