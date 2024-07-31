@@ -1,0 +1,9 @@
+[[Explicação Circuito magnético.canvas|Link para o canva]]
+
+![[Pasted image 20240728165409.png]]Quando são usados os conceitos de circuito magnético em um núcleo, os cálculos de fluxo são sempre aproximados – no melhor dos casos, eles terão uma exatidão de cerca de 5% em relação ao valor real. Há uma série de razões para essa falta inerente de exatidão: 
+1. O conceito de circuito magnético assume que todo o fluxo está confinado ao interior do núcleo magnético. Infelizmente, isso não é totalmente verdadeiro. A permeabilidade de um núcleo ferromagnético é de 2000 a 6000 vezes a do ar, **mas uma pequena fração do fluxo escapa do núcleo indo para o ar circundante**, cuja permeabilidade é baixa. **Esse fluxo no exterior do núcleo é denominado fluxo de dispersão e desempenha um papel muito importante no projeto de máquinas elétricas**. 
+2. Os cálculos de relutância **assumem** um certo comprimento de **caminho médio e de área de seção reta para o núcleo**. **Essas suposições não são realmente muito boas, especialmente nos cantos**. 
+3. Nos materiais ferromagnéticos, **a permeabilidade varia com a quantidade de fluxo** que já está presente no material. Esse efeito não linear será descrito em detalhe. Ele acrescenta **outra fonte de erro** à análise do circuito magnético, **já que as relutâncias usadas nos cálculos de circuitos magnéticos dependem da permeabilidade do material**. 
+4. **Se houver entreferros de ar no caminho de fluxo do núcleo**, a **área efetiva da seção reta do entreferro de ar será maior do que a área da seção reta do núcleo de ferro de ambos os lados**. A área efetiva extra é causada pelo denominado “efeito de espraiamento” do campo magnético no entreferro de ar (Figura 1-6).
+
+Nos cálculos, pode-se compensar parcialmente essas fontes inerentes de erro. Para tanto, valores “corrigidos” ou “efetivos” de comprimento de caminho médio e de área de seção reta são usados no lugar dos valores reais de comprimento e área.

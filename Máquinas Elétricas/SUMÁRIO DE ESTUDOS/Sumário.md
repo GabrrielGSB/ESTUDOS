@@ -20,12 +20,9 @@
 
 
 ## **1.4** O CAMPO MAGNÉTICO
+### 1.4.1 [[Produção de um campo magnético]]
+### 1.4.2 [[Circuito magnético]]
+### 1.4.3 [[Comportamento magnético dos materiais ferromagnéticos]]
+### 1.4.4 [[Perdas de energia em um núcleo ferromagnético]]
 
-1. Um fio condutor de corrente produz um campo magnético em sua vizinhança.
-
-2. Um campo magnético variável no tempo induzirá uma tensão em uma bobina se esse campo passar através dessa bobina. (Esse é o fundamento da ação de transformador.) 
-
-3. Um **fio condutor de corrente, na presença de um campo magnético**, tem uma força induzida nele. (Esse é o fundamento da ação de motor.) 
-
-4. Um fio **movendo-se na presença de um campo magnético** tem uma tensão induzida nele. (Esse é o fundamento da ação de gerador.)
-### [[Produção de um campo magnético]]
+## **1.5** LEI DE FARADAY – TENSÃO INDUZIDA A PARTIR DE UM CAMPO MAGNÉTICO VARIÁVEL NO TEMPO
