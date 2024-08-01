@@ -1,1 +1,1 @@
-link do canva
+[[Explicação máquina linear CC.canvas|link do canva]]

@@ -10,7 +10,7 @@
 		{"id":"027383699f893df8","type":"text","text":"**Outra representação para a densidade de fluxo magnético**\n$$\nB = \\mu \\cdot H = \\frac{\\mu \\cdot N \\cdot i}{l_{n}}\n$$","x":590,"y":-758,"width":320,"height":138},
 		{"id":"1573cbb90192eafc","type":"text","text":"**O Fluxo Magnético é dado como:**\n\n$$\n\\phi = \\int^{}_{A}{B \\cdot dA}\n$$\nem que **dA** **é a unidade diferencial de área**. Se o **vetor de densidade de fluxo for perpendicular a um plano de área A** e **se a densidade de fluxo for constante através da área**, então essa equação se reduzirá a\n\n$$\n\\phi = B\\cdot A\n$$\n\nLogo\n\n$$\n\\phi = \\frac{\\mu \\cdot N \\cdot i \\cdot A}{l_{n}}\n$$","x":1160,"y":-428,"width":420,"height":377},
 		{"id":"379d2865a25adf6f","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240727232639.png","x":-147,"y":-380,"width":434,"height":280},
-		{"id":"aa55f9416b48bdf7","type":"text","text":"[[SUMÁRIO|LINK PARA O SUMÁRIO]]","x":-326,"y":-180,"width":153,"height":80}
+		{"id":"aa55f9416b48bdf7","type":"text","text":"[[SUMÁRIO CAP 1|LINK PARA O SUMÁRIO]]","x":-326,"y":-180,"width":153,"height":80}
 	],
 	"edges":[
 		{"id":"a82151e9d5a01cf3","fromNode":"379d2865a25adf6f","fromSide":"bottom","toNode":"d417abe714187c30","toSide":"top"},

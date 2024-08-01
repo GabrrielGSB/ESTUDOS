@@ -1,10 +1,10 @@
 {
 	"nodes":[
-		{"id":"f80cda6f65e5e7e2","x":-40,"y":-400,"width":400,"height":371,"type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240731105446.png"},
-		{"id":"44a58904ba46428d","x":-40,"y":20,"width":400,"height":360,"type":"text","text":"Um segundo efeito importante de um campo magnético no seu entorno é que ele \ninduz uma força em um fio que esteja conduzindo uma corrente dentro do campo. \nO conceito básico envolvido está ilustrado na figura acima. Ela mostra um \ncondutor que está presente no interior de um campo magnético uniforme de densidade de fluxo **B**, que aponta para dentro da página. O condutor tem **l** metros de \ncomprimento e conduz uma corrente de **i** ampères. **A força induzida no condutor** \n**é dada por**"},
-		{"id":"ed69194b4bcb40cf","x":400,"y":160,"width":170,"height":80,"type":"text","text":"$$\nF = i\\cdot l \\cdot B \\cdot sen\\theta\n$$"},
-		{"id":"9346e2a128c4489f","x":415,"y":20,"width":140,"height":80,"type":"text","text":"$$\nF = i(l\\space X \\space B)\n$$"},
-		{"id":"f7ed2485355344f4","x":-40,"y":420,"width":400,"height":220,"type":"text","text":"A indução de uma força em um fio condutor por uma corrente na presença de \num campo magnético **é o fundamento da chamada ação de motor**. Quase todo tipo \nde motor depende desse princípio básico para produzir as forças e conjugados que o \ncolocam em movimento"}
+		{"id":"f80cda6f65e5e7e2","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240731105446.png","x":-40,"y":-400,"width":400,"height":371},
+		{"id":"44a58904ba46428d","type":"text","text":"Um segundo efeito importante de um campo magnético no seu entorno é que ele \ninduz uma força em um fio que esteja conduzindo uma corrente dentro do campo. \nO conceito básico envolvido está ilustrado na figura acima. Ela mostra um \ncondutor que está presente no interior de um campo magnético uniforme de densidade de fluxo **B**, que aponta para dentro da página. O condutor tem **l** metros de \ncomprimento e conduz uma corrente de **i** ampères. **A força induzida no condutor** \n**é dada por**","x":-40,"y":20,"width":400,"height":360},
+		{"id":"ed69194b4bcb40cf","type":"text","text":"$$\nF = i\\cdot l \\cdot B \\cdot sen\\theta\n$$","x":400,"y":160,"width":170,"height":80},
+		{"id":"9346e2a128c4489f","type":"text","text":"$$\nF = i(l\\space X \\space B)\n$$","x":415,"y":20,"width":140,"height":80},
+		{"id":"f7ed2485355344f4","type":"text","text":"A indução de uma força em um fio condutor por uma corrente na presença de \num campo magnético **é o fundamento da chamada ação de motor**. Quase todo tipo \nde motor depende desse princípio básico para produzir as forças e conjugados que o \ncolocam em movimento","x":-40,"y":420,"width":400,"height":220}
 	],
 	"edges":[
 		{"id":"814a48032629c103","fromNode":"44a58904ba46428d","fromSide":"right","toNode":"9346e2a128c4489f","toSide":"left"},

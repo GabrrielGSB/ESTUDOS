@@ -1,13 +1,18 @@
 {
 	"nodes":[
-		{"id":"c9dadbe11f72c212","type":"text","text":" Ela consiste em uma bateria, uma \nresistência e uma chave conectadas a um par de trilhos sem atrito. Ao longo do leito desses trilhos, está presente um campo magnético constante, de densidade uniforme e orientado para dentro da página. Uma barra de metal condutor está assentada sobre os trilhos","x":-200,"y":-120,"width":420,"height":200},
-		{"id":"213ea9837b80b78b","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240731122134.png","x":-190,"y":140,"width":400,"height":160},
+		{"id":"213ea9837b80b78b","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240731122134.png","x":-417,"y":140,"width":627,"height":251},
 		{"id":"81a86c3430c9eff9","type":"text","text":"$$\nV_{B} = e_{ind} + i\\cdot R = 0\n$$","x":340,"y":248,"width":202,"height":81},
 		{"id":"b2b163f90b2d2342","type":"text","text":"$$\nF = i(l\\space \\times \\space B)\n$$","x":366,"y":28,"width":150,"height":81},
 		{"id":"f066188aab50fba4","type":"text","text":"$$\ne_{ind} = (v \\space \\times B)\\bullet l\n$$","x":351,"y":129,"width":180,"height":91},
 		{"id":"9bbd85ef32ab8784","type":"text","text":"$$\nF_{liq} = m \\cdot a\n$$","x":370,"y":349,"width":143,"height":83},
-		{"id":"3f15d6f067e2747e","type":"text","text":"1. Quando a chave é fechada, é produzida uma corrente dada por $i = \\frac{V_{B}}{R}$. \n2. O fluxo de corrente produz sobre a barra uma força dada por $F = i\\cdot l \\cdot B$. \n3. A barra é acelerada para a direita, produzindo uma tensão induzida $e_{ind}$ à medida que a velocidade aumenta. \n4. Essa tensão induzida diminui o fluxo de corrente $↓i = \\frac{V_{B} - e_{ind}↑}{R}$. \n5. Dessa forma, a força induzida é diminuída ($↓F = i ↓ \\cdot l \\cdot B$) até que, no final, $F = 0$. Nesse ponto, $e_{ind} = V_{B}$, $i = 0$ e a barra se deslocará sem carga com velocidade constante $vss = \\frac{V_{B}}{B \\cdot l}$.","x":-253,"y":349,"width":526,"height":368},
-		{"id":"cc0b9adb234cdd83","type":"text","text":"1. Uma força $F_{carga}$ é aplicada em oposição ao sentido do movimento, o que causa uma força líquida $F_{liq}$ que se opõe ao sentido desse mesmo movimento.\n2. A aceleração resultante a $a = \\frac{F_{liq}}{m}$ é negativa, de modo que a velocidade da barra diminui ($v$↓).\n3. A tensão $↓e_{ind} = ↓v\\cdot B\\cdot l$ diminui e, portanto, $↓i = \\frac{(V_{B} - ↓e_{ind})}{R}$ aumenta.","x":-253,"y":760,"width":526,"height":292}
+		{"id":"c9dadbe11f72c212","type":"text","text":" Ela consiste em uma bateria, uma \nresistência e uma chave conectadas a um par de trilhos sem atrito. Ao longo do leito desses trilhos, está presente um campo magnético constante, de densidade uniforme e orientado para dentro da página. Uma barra de metal condutor está assentada sobre os trilhos","x":-313,"y":-131,"width":420,"height":200},
+		{"id":"3f7692ac0e1edd04","type":"text","text":"**Dando partida à máquina linear CC**","x":304,"y":600,"width":321,"height":55},
+		{"id":"e1df504f4b489853","type":"text","text":" **A máquina linear CC como gerador**","x":-846,"y":600,"width":327,"height":50},
+		{"id":"90dfdb13055e187c","type":"text","text":"**A máquina linear CC como motor**","x":-263,"y":600,"width":321,"height":55},
+		{"id":"b5388ec1333cf234","type":"text","text":"1. Uma força $F_{ap}$ é aplicada no sentido do movimento; a força líquida $F_{Liq}$ atua no mesmo sentido desse movimento. \n2. A aceleração $a = \\frac{F_{Liq}}{m}$ é positiva, de modo que a velocidade da barra aumenta (V↑). \n3. A tensão $↑e_{ind} = ↑V\\cdot B\\cdot l$ aumenta e, portanto, $↑i = \\frac{(↑e_{ind} - V_{B})}{R}$ também aumenta.\n4. A força induzida $↑F_{ind} = ↑i\\cdot l\\cdot B$ aumenta até que $⏐F_{ind}⏐ = ⏐F_{carga}⏐$ com uma velocidade $V$ maior. \n5. Uma quantidade de potência mecânica igual a $F_{ind} \\cdot V$ agora convertida em potência elétrica $e_{ind}\\cdot i$ e a máquina opera como gerador.","x":-946,"y":740,"width":526,"height":368},
+		{"id":"cc0b9adb234cdd83","type":"text","text":"1. Uma força $F_{carga}$ é aplicada em oposição ao sentido do movimento, o que causa uma força líquida $F_{liq}$ que se opõe ao sentido desse mesmo movimento.\n2. A aceleração resultante a $a = \\frac{F_{liq}}{m}$ é negativa, de modo que a velocidade da barra diminui ($V$↓).\n3. A tensão $↓e_{ind} = ↓v\\cdot B\\cdot l$ diminui e, portanto, $↑i = \\frac{(V_{B} - ↓e_{ind})}{R}$ aumenta.\n4. A força induzida $↑F_{ind} = ↑i\\cdot l\\cdot B$ aumenta até que $⏐F_{ind}⏐ = ⏐F_{carga}⏐$ com uma velocidade v menor.\n5. Uma quantidade de potência elétrica $e_{ind} \\cdot i$ e agora é convertida em potência mecânica $F_{ind} \\cdot V$ e a máquina opera como motor.","x":-366,"y":740,"width":526,"height":368},
+		{"id":"3f15d6f067e2747e","type":"text","text":"1. Quando a chave é fechada, é produzida uma corrente dada por $i = \\frac{V_{B}}{R}$. \n2. O fluxo de corrente produz sobre a barra uma força dada por $F = i\\cdot l \\cdot B$. \n3. A barra é acelerada para a direita, produzindo uma tensão induzida $e_{ind}$ à medida que a velocidade aumenta. \n4. Essa tensão induzida diminui o fluxo de corrente $↓i = \\frac{V_{B} - e_{ind}↑}{R}$. \n5. Dessa forma, a força induzida é diminuída ($↓F_{ind} = i ↓ \\cdot l \\cdot B$) até que, no final, $F_{ind} = 0$. Nesse ponto, $e_{ind} = V_{B}$, $i = 0$ e a barra se deslocará sem carga com velocidade constante $V_{ss} = \\frac{V_{B}}{B \\cdot l}$.","x":201,"y":740,"width":526,"height":368},
+		{"id":"2f76252f456fa437","type":"text","text":"A $F_{ind}$ vai ser contrária a $F_{a}$","x":-1260,"y":892,"width":270,"height":65}
 	],
 	"edges":[
 		{"id":"1c49b244aa9a0497","fromNode":"c9dadbe11f72c212","fromSide":"bottom","toNode":"213ea9837b80b78b","toSide":"top"},
@@ -15,6 +20,12 @@
 		{"id":"eff0d72ad0b6471b","fromNode":"213ea9837b80b78b","fromSide":"right","toNode":"f066188aab50fba4","toSide":"left"},
 		{"id":"b70474529e4af94f","fromNode":"213ea9837b80b78b","fromSide":"right","toNode":"81a86c3430c9eff9","toSide":"left"},
 		{"id":"6b0fb7b7430398d4","fromNode":"213ea9837b80b78b","fromSide":"right","toNode":"9bbd85ef32ab8784","toSide":"left"},
-		{"id":"4a4349bbc18a2ab4","fromNode":"213ea9837b80b78b","fromSide":"bottom","toNode":"3f15d6f067e2747e","toSide":"top"}
+		{"id":"df0775e8989ea7fb","fromNode":"e1df504f4b489853","fromSide":"bottom","toNode":"b5388ec1333cf234","toSide":"top"},
+		{"id":"2bdc53c89323a63c","fromNode":"213ea9837b80b78b","fromSide":"bottom","toNode":"3f7692ac0e1edd04","toSide":"top"},
+		{"id":"90832ad3488f1d21","fromNode":"213ea9837b80b78b","fromSide":"bottom","toNode":"90dfdb13055e187c","toSide":"top"},
+		{"id":"e3905936ff61e923","fromNode":"213ea9837b80b78b","fromSide":"bottom","toNode":"e1df504f4b489853","toSide":"top"},
+		{"id":"c99840b37bbec208","fromNode":"90dfdb13055e187c","fromSide":"bottom","toNode":"cc0b9adb234cdd83","toSide":"top"},
+		{"id":"049b15073c08da8c","fromNode":"3f7692ac0e1edd04","fromSide":"bottom","toNode":"3f15d6f067e2747e","toSide":"top"},
+		{"id":"81ad5aa3adad9cb6","fromNode":"b5388ec1333cf234","fromSide":"left","toNode":"2f76252f456fa437","toSide":"right"}
 	]
 }
