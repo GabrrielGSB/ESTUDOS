@@ -1,0 +1,1 @@
+[[Explicação transformador ideal.canvas|link do canva]]

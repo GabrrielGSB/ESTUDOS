@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"b7b9bd9f196cf7ef","type":"text","text":"Um transformador ideal é um dispositivo sem perdas com um enrolamento de entrada e um enrolamento de saída. As relações entre a tensão de entrada e a tensão de saída e entre a corrente de entrada e a corrente de saída são dadas por duas equações simples. \n\nO transformador mostrado  tem $N_{P}$ espiras de fio no lado do enrolamento primário e $N_{S}$ espiras de fio no lado do secundário. A relação entre a tensão $V_{P(t)}$ aplicada no lado do enrolamento primário do transformador e a tensão $V_{S(t)}$ produzida no lado do secundário.","x":-280,"y":-280,"width":480,"height":340},
+		{"id":"33796e77e9fb420b","type":"text","text":"$$\n\\frac{V_P}{V_S} = \\frac{N_P}{N_S} = a\n$$","x":260,"y":-280,"width":190,"height":100},
+		{"id":"ad3256b6091c58a1","type":"text","text":"A relação entre a corrente $I_{P(t)}$ que entra no lado primário do transformador e a corrente $I_{S(t)}$ que sai do lado secundário do transformador é","x":-280,"y":100,"width":480,"height":120},
+		{"id":"130ff08fd41e1cd7","type":"text","text":"$$\nN_P \\cdot I_P = N_S \\cdot I_S\n$$","x":265,"y":-140,"width":180,"height":80},
+		{"id":"2a3b6cfa84e51cf9","type":"text","text":"$$\n\\frac{N_P}{N_S} = \\frac{I_S}{I_P} = \\frac{1}{a}\n$$","x":287,"y":-8,"width":158,"height":108},
+		{"id":"dc7a8e634cf8bd10","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240803124750.png","x":-280,"y":-800,"width":730,"height":430},
+		{"id":"4e3ff061d62bce63","x":-250,"y":260,"width":420,"height":180,"type":"text","text":"**Observe que o ângulo de fase de $V_P$ é o mesmo que o ângulo de $V_S$ e o ângulo de fase** \n**de $I_P$ é o mesmo que o ângulo de fase de $I_S$. A relação de espiras do transformador** \n**ideal afeta as magnitudes das tensões e correntes, mas não os seus ângulos.**"}
+	],
+	"edges":[
+		{"id":"7a60397d228d3ad0","fromNode":"b7b9bd9f196cf7ef","fromSide":"right","toNode":"33796e77e9fb420b","toSide":"left"},
+		{"id":"cd03d58fa337f180","fromNode":"ad3256b6091c58a1","fromSide":"right","toNode":"130ff08fd41e1cd7","toSide":"left"},
+		{"id":"728bdfff1d7b793f","fromNode":"ad3256b6091c58a1","fromSide":"right","toNode":"2a3b6cfa84e51cf9","toSide":"left"},
+		{"id":"74a020abcd458aa1","fromNode":"dc7a8e634cf8bd10","fromSide":"bottom","toNode":"b7b9bd9f196cf7ef","toSide":"top"},
+		{"id":"66a201936c9a999d","fromNode":"b7b9bd9f196cf7ef","fromSide":"bottom","toNode":"ad3256b6091c58a1","toSide":"top"},
+		{"id":"f5a098de83321461","fromNode":"ad3256b6091c58a1","fromSide":"bottom","toNode":"4e3ff061d62bce63","toSide":"top"}
+	]
+}

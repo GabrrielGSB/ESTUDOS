@@ -1,4 +1,3 @@
-# **CAP 1**
 ## **1.1** MÁQUINAS ELÉTRICAS E TRANSFORMADORES NA VIDA DIÁRIA
 ## **1.2** OBSERVAÇÃO SOBRE UNIDADES E NOTAÇÃO
 ## **1.3** [[Movimento de rotação, lei de Newton e relações de potência| MOVIMENTO DE ROTAÇÃO, LEI DE NEWTON E RELAÇÕES DE POTÊNCIA]]
@@ -16,4 +15,4 @@
 
 ## **1.8** [[A máquina linear CC - Um exemplo simples|A MÁQUINA LINEAR CC – UM EXEMPLO SIMPLES]]
 
-## **1.9** POTÊNCIAS ATIVA, REATIVA E APARENTE EM CIRCUITOS CA MONOFÁSICOS
+## **1.9** [[Potência Ativa, Reativa e Aparente em circuitos CA monofásicos|POTÊNCIAS ATIVA, REATIVA E APARENTE EM CIRCUITOS CA MONOFÁSICOS]]

@@ -1,0 +1,8 @@
+Em um transformador real, os enrolamentos primário e secundário envolvem um o outro, sendo o enrolamento de baixa tensão o mais interno. Essa disposição atende a dois propósitos:
+
+1. Simplifica o problema de isolar o enrolamento de alta tensão do núcleo. 
+2. Resulta muito menos fluxo de dispersão do que seria o caso se os dois enrolamentos estivessem separados de uma distância no núcleo
+
+ ![[Pasted image 20240803123715.png]]
+
+Além dos diversos transformadores de potência, dois transformadores de finalidade especial são usados para medir a tensão e a corrente nas máquinas elétricas e nos sistemas de potência elétrica. **O primeiro desses transformadores especiais é um dispositivo especialmente projetado para tomar uma amostra de alta tensão e produzir uma baixa tensão secundária que lhe é diretamente proporcional.** Esse transformador é denominado **transformador de potencial.** Um transformador de potência também produz uma tensão secundária diretamente proporcional à sua tensão primária. A diferença entre um transformador de potencial e um de potência é que **o transformador de potencial é projetado para trabalhar apenas com uma corrente muito pequena.** **O segundo tipo de transformador especial é um dispositivo projetado para fornecer uma corrente secundária muito menor do que, mas diretamente proporcional, sua corrente primária.** Esse dispositivo é denominado **transformador de corrente**. 
