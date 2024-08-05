@@ -1,0 +1,1 @@
+[[Explicação do circuito equivalente de um transformador real.canvas|link do canva]]

@@ -1,0 +1,1 @@
+![[Explicação corrente de magnetização.canvas|link do canva]]

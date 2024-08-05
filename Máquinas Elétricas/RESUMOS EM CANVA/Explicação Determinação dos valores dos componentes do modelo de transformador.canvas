@@ -1,0 +1,35 @@
+{
+	"nodes":[
+		{"id":"ea8ca63f35618196","type":"text","text":"É possível determinar experimentalmente os valores das indutâncias e resistências do modelo de transformador. Uma aproximação adequada desses valores pode ser obtida com apenas dois testes ou ensaios, o ensaio a vazio e o ensaio de curto-circuito.","x":-320,"y":-100,"width":520,"height":160},
+		{"id":"c690ce5fea85f882","type":"text","text":"Uma tensão plena de linha é aplicada a um lado do transformador. A seguir, **a tensão de entrada, a corrente de entrada e a potência de entrada do transformador são medidas.** (Essas medidas **são normalmente realizadas no lado de baixa tensão do transformador**, já que é mais fácil lidar com baixas tensões.) A partir dessa informação, **é possível determinar o fator de potência da corrente de entrada e consequentemente a magnitude e o ângulo da impedância de excitação**","x":280,"y":110,"width":520,"height":280},
+		{"id":"60be71c48b13ad1a","type":"text","text":"O módulo da resistência de excitação (referida ao lado do transformador usado para a medida) pode ser encontrado a partir da tensão e da corrente do ensaio a vazio ($V_Z$) ou de circuito aberto:","x":280,"y":-100,"width":520,"height":160},
+		{"id":"922bfed438d6f54e","type":"text","text":"$$\n|R_{E}| = \\frac{V_{VZ}}{I_{VZ}}\n$$","x":860,"y":-75,"width":150,"height":110},
+		{"id":"ea41c033662658be","type":"text","text":"O ângulo da admitância pode ser encontrado a partir do conhecimento do fator de potência do circuito. O fator de potência (FP) a vazio é dado por","x":860,"y":110,"width":380,"height":140},
+		{"id":"68d4968a314c018e","type":"text","text":"$$\nFP = cos\\theta = \\frac{P_{VZ}}{V_{VZ} \\cdot I_{VZ}}\n$$","x":925,"y":281,"width":250,"height":109},
+		{"id":"502e2e2161e56227","type":"text","text":"**O fator de potência está sempre atrasado em um transformador real**, de modo que o \nângulo da corrente sempre está atrasado em relação à tensão em $\\theta$ graus. Portanto, a \nresistência $R_E$ é","x":1260,"y":281,"width":400,"height":159},
+		{"id":"a10b9d7838247ebc","type":"text","text":"$$\n|R_{E}| = \\frac{V_{VZ}}{I_{VZ}}\\angle \\theta\n$$","x":1378,"y":110,"width":165,"height":110},
+		{"id":"12e8bafd0f97dbed","type":"text","text":"**O ângulo da resistência só é positivo por que o ângulo da corrente é negativo**","x":1317,"y":-43,"width":287,"height":103},
+		{"id":"1b17d722fc5492da","type":"text","text":"Os valores de $R_{C}$ e $X_M$ podem ser obtidos ao transformar para a forma complexa a equação ao lado. ","x":1620,"y":102,"width":291,"height":126},
+		{"id":"fc0c7d3b4359877c","type":"text","text":"No ensaio a vazio ou de circuito aberto, **um enrolamento do transformador é deixado em circuito aberto e o outro enrolamento é conectado à tensão nominal plena de linha.** Nas condições descritas, toda a corrente de entrada deve circular através do ramo de excitação do transformador. Os elementos em série $R_P$ e $X_P$ são pequenos demais, em comparação com $R_C$ e $X_M$, para causar uma queda de tensão significativa, de modo que **essencialmente toda a tensão de entrada sofre queda no ramo de excitação.**","x":-330,"y":120,"width":540,"height":260},
+		{"id":"89a1fa20fdecb388","type":"text","text":"**No ensaio de curto-circuito, os terminais de baixa tensão do transformador são colocados em curto-circuito e os terminais de alta tensão são ligados a uma fonte de tensão variável**. (Essa **medida é realizada normalmente no lado de alta tensão do transformador, porque as correntes são menores nesse lado,** sendo mais fáceis de serem manipuladas.) **A tensão de entrada é ajustada até que a corrente no enrolamento em curto-circuito seja igual ao seu valor nominal**. (Assegure-se de manter a tensão do primário em um nível seguro. Não seria uma boa ideia queimar os enrolamentos do transformador enquanto estivéssemos tentando testá-lo.) **A tensão, a corrente e a potência de entrada são novamente medidas**","x":-320,"y":-540,"width":520,"height":380},
+		{"id":"d4a37eb5f7e738d2","type":"text","text":"**Durante o ensaio de curto-circuito, a tensão de entrada é tão baixa que uma corrente desprezível circulará no ramo de excitação.** Se a corrente de excitação for ignorada, **toda a queda de tensão no transformador poderá ser atribuída aos elementos em série do circuito.** O módulo das impedâncias em série, referidas ao lado primário do transformador, é","x":280,"y":-455,"width":470,"height":210},
+		{"id":"a3f081e1d32d568e","type":"text","text":"$$\n|Z_{SE}| = \\frac{V_{CC}}{I_{CC}} \n$$","x":390,"y":-652,"width":250,"height":112},
+		{"id":"e00fcac96168892c","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240805123619.png","x":-330,"y":500,"width":540,"height":277}
+	],
+	"edges":[
+		{"id":"18fda790f41c91e8","fromNode":"fc0c7d3b4359877c","fromSide":"right","toNode":"c690ce5fea85f882","toSide":"left"},
+		{"id":"30ae1236f3d5f342","fromNode":"c690ce5fea85f882","fromSide":"top","toNode":"60be71c48b13ad1a","toSide":"bottom"},
+		{"id":"1e83bb76a2267c54","fromNode":"60be71c48b13ad1a","fromSide":"right","toNode":"922bfed438d6f54e","toSide":"left"},
+		{"id":"9503f546da703b26","fromNode":"922bfed438d6f54e","fromSide":"bottom","toNode":"ea41c033662658be","toSide":"top"},
+		{"id":"3bdced5bb2c8315d","fromNode":"ea41c033662658be","fromSide":"bottom","toNode":"68d4968a314c018e","toSide":"top"},
+		{"id":"a4421ddaa8142691","fromNode":"68d4968a314c018e","fromSide":"right","toNode":"502e2e2161e56227","toSide":"left"},
+		{"id":"74ed39e5ef06e637","fromNode":"502e2e2161e56227","fromSide":"top","toNode":"a10b9d7838247ebc","toSide":"bottom"},
+		{"id":"387e88bb667514af","fromNode":"12e8bafd0f97dbed","fromSide":"bottom","toNode":"a10b9d7838247ebc","toSide":"top"},
+		{"id":"ffaa104fd39cbd69","fromNode":"a10b9d7838247ebc","fromSide":"right","toNode":"1b17d722fc5492da","toSide":"left"},
+		{"id":"cd56d76d0be57fc7","fromNode":"ea8ca63f35618196","fromSide":"bottom","toNode":"fc0c7d3b4359877c","toSide":"top"},
+		{"id":"292b0cbeb5e07f50","fromNode":"ea8ca63f35618196","fromSide":"top","toNode":"89a1fa20fdecb388","toSide":"bottom"},
+		{"id":"41c316e6f6b6e95a","fromNode":"89a1fa20fdecb388","fromSide":"right","toNode":"d4a37eb5f7e738d2","toSide":"left"},
+		{"id":"0f6e7249c14b1f5c","fromNode":"d4a37eb5f7e738d2","fromSide":"top","toNode":"a3f081e1d32d568e","toSide":"bottom"},
+		{"id":"f4e8dc7032f680c1","fromNode":"fc0c7d3b4359877c","fromSide":"bottom","toNode":"e00fcac96168892c","toSide":"top"}
+	]
+}

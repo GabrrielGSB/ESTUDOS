@@ -1,1 +1,13 @@
-{}
+{
+	"nodes":[
+		{"id":"82b7279447f8788d","x":180,"y":-120,"width":232,"height":129,"type":"text","text":"$$\nP_{input} = V_P \\cdot I_P \\cdot cos\\theta_{p}\n$$\n\n\n$$\nQ_{input} = V_P \\cdot I_P \\cdot sen\\theta_P\n$$\n\n$$\nS_{input} = V_P \\cdot I_p\n$$"},
+		{"id":"6b9dda79cc7978ff","x":-280,"y":80,"width":405,"height":140,"type":"text","text":"**Como em um transformador ideal os ângulos entre tensão e corrente não são afetados, então temos $\\theta_P = \\theta_S = \\theta$ . Os enrolamentos primário e secundário de um transformador ideal têm o mesmo fator de potência.**"},
+		{"id":"281a19ee47b565a3","x":-280,"y":-125,"width":405,"height":140,"type":"text","text":"A potência ativa de entrada $P_{input}$ fornecida ao transformador pelo circuito primário \né dada pela equação, que é a mesma equação para o lado secundário."},
+		{"id":"d228775d9d899e36","x":171,"y":80,"width":250,"height":240,"type":"text","text":" **A potência de saída de um transformador ideal é igual à sua potência de**\n**entrada.**\n\nSendo que a mesma relação é aplicável a potência reativa Q e aparente S."}
+	],
+	"edges":[
+		{"id":"82a3ff5bbbc475c5","fromNode":"281a19ee47b565a3","fromSide":"right","toNode":"82b7279447f8788d","toSide":"left"},
+		{"id":"439877ac6b9ef894","fromNode":"281a19ee47b565a3","fromSide":"bottom","toNode":"6b9dda79cc7978ff","toSide":"top"},
+		{"id":"d9b2a6e03c70dee1","fromNode":"82b7279447f8788d","fromSide":"bottom","toNode":"d228775d9d899e36","toSide":"top"}
+	]
+}

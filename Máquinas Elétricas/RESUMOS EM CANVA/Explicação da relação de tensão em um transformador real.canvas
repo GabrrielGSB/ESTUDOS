@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"76572dd1efe8e709","type":"text","text":"Quando o fluxo médio presente no enrolamento primário do transformador é isolado, ignorando a resistência do enrolamento, obtemos o resultado","x":-125,"y":-30,"width":365,"height":130},
+		{"id":"11af3b2c332db574","type":"text","text":"$$\ne_{ind} = N \\cdot \\frac{d\\overline{\\phi}}{dt}\n$$","x":347,"y":-15,"width":160,"height":100},
+		{"id":"81b33930250dd138","type":"text","text":"$$\n\\overline{\\phi} = \\frac{1}{N_P}\\int{V_{p}(t)dt}\n$$","x":340,"y":120,"width":175,"height":100},
+		{"id":"a2c2cac892372ca1","type":"text","text":"Esse fluxo está presente na bobina primária do transformador. Que efeito terá ele sobre a bobina secundária do transformador? **O efeito depende de quanto fluxo atinge a bobina secundária**. **Nem todo o fluxo produzido na bobina primária passa também através da bobina secundária** – porque, em lugar disso, algumas das linhas de fluxo deixam o núcleo de ferro passando através do ar. A parte do fluxo que passa através de uma das bobinas do transformador, mas não através da outra, é denominada fluxo de dispersão","x":-182,"y":140,"width":480,"height":300},
+		{"id":"841b92c2f85bd2ec","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240804175711.png","x":-780,"y":100,"width":548,"height":380},
+		{"id":"3abc527f35508061","type":"text","text":"O fluxo na bobina primária do transformador \npode assim ser dividido em duas componentes: **um fluxo mútuo, que permanece no núcleo e concatena ou enlaça ambos os enrolamento**s e **um pequeno fluxo de dispersão, que passa através do enrolamento primário mas retorna através do ar, contornando o enrolamento secundário**","x":-143,"y":500,"width":402,"height":240},
+		{"id":"8e8917aca2b1ffb9","type":"text","text":"$$\n\\overline{\\phi_P} = \\phi_M + \\phi_{DP}\n$$\n\n$$\n\\overline{\\phi_S} = \\phi_M + \\phi_{DS}\n\n$$","x":320,"y":561,"width":154,"height":119},
+		{"id":"94e1bd6cf2d11be8","type":"text","text":"**Logo parte da tensão se perde no fluxo de dispersão!**\n\nLogo a equação da relação de um transformador só é verdadeira se o fluxo de dispersão for muito pequeno comparado ao mútuo","x":-662,"y":515,"width":313,"height":210}
+	],
+	"edges":[
+		{"id":"4a0bcfe69e860b16","fromNode":"11af3b2c332db574","fromSide":"bottom","toNode":"81b33930250dd138","toSide":"top"},
+		{"id":"a098edd550a16897","fromNode":"76572dd1efe8e709","fromSide":"right","toNode":"11af3b2c332db574","toSide":"left"},
+		{"id":"9d53f20e138cbd47","fromNode":"76572dd1efe8e709","fromSide":"bottom","toNode":"a2c2cac892372ca1","toSide":"top"},
+		{"id":"5ce8ee500f3a42e5","fromNode":"a2c2cac892372ca1","fromSide":"left","toNode":"841b92c2f85bd2ec","toSide":"right"},
+		{"id":"4e0d6b370ebc1031","fromNode":"3abc527f35508061","fromSide":"right","toNode":"8e8917aca2b1ffb9","toSide":"left"},
+		{"id":"4edb049cf4d2df80","fromNode":"a2c2cac892372ca1","fromSide":"bottom","toNode":"3abc527f35508061","toSide":"top"},
+		{"id":"1e5b590a9c0ec6cf","fromNode":"3abc527f35508061","fromSide":"left","toNode":"94e1bd6cf2d11be8","toSide":"right"},
+		{"id":"1ef9acf51cdaa003","fromNode":"841b92c2f85bd2ec","fromSide":"bottom","toNode":"94e1bd6cf2d11be8","toSide":"top"}
+	]
+}

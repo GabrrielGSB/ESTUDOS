@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"d52df71c3557fa89","x":-360,"y":-260,"width":582,"height":360,"type":"text","text":"Se um circuito contiver um transformador ideal, o modo mais simples de analisar o circuito em relação a suas tensões e correntes será **substituir a parte do circuito de um dos lados do transformador por um circuito equivalente que tenha as mesmas características de terminais**. Depois que um lado foi substituído pelo circuito equivalente, o novo circuito (sem a presença do trsfanormador) pode ser resolvido em relação a suas tensões e correntes. Na parte do circuito que não foi substituída, as soluções obtidas serão os valores corretos de tensão e corrente do circuito original. **A seguir, a relação de espiras do transformador poderá ser usada para determinar as tensões e correntes no outro lado do transformador**. O processo de substituir um lado de um transformador pelo seu equivalente de nível de tensão no outro lado é conhecido como **referir ou refletir** o primeiro lado do transformador ao segundo lado."}
+	],
+	"edges":[]
+}

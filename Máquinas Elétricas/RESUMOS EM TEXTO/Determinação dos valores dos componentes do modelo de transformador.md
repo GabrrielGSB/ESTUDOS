@@ -1,0 +1,1 @@
+[[Explicação Determinação dos valores dos componentes do modelo de transformador.canvas|link do canva]]

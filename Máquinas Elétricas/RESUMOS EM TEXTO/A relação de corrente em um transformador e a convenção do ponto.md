@@ -1,0 +1,1 @@
+[[Explicação da relação de corrente em um transformador.canvas|link do canva]]

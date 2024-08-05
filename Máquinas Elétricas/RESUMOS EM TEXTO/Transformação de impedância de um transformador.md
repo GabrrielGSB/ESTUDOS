@@ -1,0 +1,1 @@
+[[Explicação Transformação de impedância de um transformador.canvas|link do canva]]

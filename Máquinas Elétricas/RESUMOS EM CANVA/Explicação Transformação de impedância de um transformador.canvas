@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"8647c41beddffa33","x":-320,"y":-140,"width":440,"height":160,"type":"text","text":"Uma das propriedades interessantes de um transformador é que, como ele altera os \nníveis de tensão e corrente, ele altera também a razão entre a tensão e a corrente e, \nportanto, a impedância aparente de um elemento"},
+		{"id":"5187dd21c8faaf80","x":160,"y":-110,"width":260,"height":100,"type":"text","text":"$$\nZ^{'}_{L} = \\frac{V_P}{I_P}= \\frac{a\\cdot V_S}{\\frac{I_S}{a}} = a^2 \\cdot \\frac{V_S}{I_S}\n$$"},
+		{"id":"806b1da6a5f45324","x":100,"y":80,"width":380,"height":115,"type":"text","text":"**Por meio de um transformador, é possível casar a impedância da carga com a** \n**impedância da fonte simplesmente usando a relação de espiras adequada.**"}
+	],
+	"edges":[
+		{"id":"f5c683a9c737d0e0","fromNode":"8647c41beddffa33","fromSide":"right","toNode":"5187dd21c8faaf80","toSide":"left"},
+		{"id":"ad16882bc38aed11","fromNode":"5187dd21c8faaf80","fromSide":"bottom","toNode":"806b1da6a5f45324","toSide":"top"}
+	]
+}

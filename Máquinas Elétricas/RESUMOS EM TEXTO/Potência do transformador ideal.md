@@ -1,0 +1,1 @@
+[[Explicação da potência do transformador ideal.canvas|link do canva]]

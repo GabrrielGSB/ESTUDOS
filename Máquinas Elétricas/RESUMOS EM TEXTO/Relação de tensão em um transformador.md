@@ -1,0 +1,1 @@
+[[Explicação da relação de tensão em um transformador real.canvas|link do canva]]

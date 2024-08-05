@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"aee99930d7cfffae","type":"text","text":"As perdas resistivas no núcleo podem ser modeladas apenas como uma resistência no primário e no secundário","x":-200,"y":-200,"width":480,"height":80},
+		{"id":"441e4986b10382ef","type":"text","text":"As perdas devido aos fluxos de dispersão tem tensões geradas de acordo com as equações ao lado.\n\nem que $L_P = N_{P}^2 \\cdot P$ é a indutância de dispersão da bobina primária e $L_S = N_{S}^2 \\cdot P$ é a indutância de dispersão da bobina secundária. **Portanto, o fluxo de dispersão será modelado por um indutor primário e outro secundário.**","x":-200,"y":-80,"width":480,"height":220},
+		{"id":"8f4d7b81f30d6498","type":"text","text":"$$\ne_{DP}(t) = L_P \\cdot \\frac{di_P}{dt}\n$$\n$$\ne_{DS}(t) = L_S \\cdot \\frac{di_S}{dt}\n$$","x":360,"y":-43,"width":199,"height":146},
+		{"id":"dd7581452b4cb8d2","type":"text","text":"Como os efeitos da excitação no núcleo podem ser modelados? A corrente de magnetização $i_m$ é uma corrente proporcional (na região não saturada) à tensão aplicada ao núcleo **e está atrasada em relação à tensão aplicada em 90°**, de modo que ela pode ser modelada por uma reatância $X_M$ conectada à fonte de tensão do primário. A corrente de perdas no núcleo $i_h{ + p}$ é uma corrente proporcional à tensão aplicada ao núcleo que **está em fase com a tensão aplicada**. Desse modo, ela pode ser modelada por uma resistência $R_C$ conectada à fonte de tensão do primário. (**Lembre-se de que, na realidade, ambas as correntes não são lineares, de modo que a indutância $X_M$ e a resistência $R_C$ são, no máximo, aproximações dos efeitos reais da excitação**.)","x":-200,"y":180,"width":480,"height":400},
+		{"id":"e581830bcfdae4aa","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240805002057.png","x":360,"y":270,"width":581,"height":220},
+		{"id":"aa9da5d82e6f78e4","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240805002221.png","x":360,"y":560,"width":581,"height":510}
+	],
+	"edges":[
+		{"id":"202ca9f2947d6002","fromNode":"441e4986b10382ef","fromSide":"right","toNode":"8f4d7b81f30d6498","toSide":"left"},
+		{"id":"e2875d92d3070cca","fromNode":"aee99930d7cfffae","fromSide":"bottom","toNode":"441e4986b10382ef","toSide":"top"},
+		{"id":"6bb9a6498c9c86a5","fromNode":"dd7581452b4cb8d2","fromSide":"right","toNode":"e581830bcfdae4aa","toSide":"left"},
+		{"id":"139c66098b1917e5","fromNode":"e581830bcfdae4aa","fromSide":"bottom","toNode":"aa9da5d82e6f78e4","toSide":"top"},
+		{"id":"eedd13ac4ea30db6","fromNode":"441e4986b10382ef","fromSide":"bottom","toNode":"dd7581452b4cb8d2","toSide":"top"}
+	]
+}

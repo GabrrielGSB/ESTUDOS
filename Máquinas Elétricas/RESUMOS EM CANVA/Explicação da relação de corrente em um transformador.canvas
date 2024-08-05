@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"c61807b4a8f90187","type":"text","text":"Como no caso do transformador ideal descrito anteriormente, **os pontos** \n**ajudam a determinar a polaridade das tensões e correntes no núcleo** sem a necessidade de examinar fisicamente seus enrolamentos. O significado físico da convenção do ponto é que **uma corrente entrando pelo terminal com ponto de um enrolamento produz uma força magneto motriz positiva $F$, ao passo que uma corrente entrando pelo terminal sem ponto de um enrolamento produz uma força magneto motriz negativa**. Portanto, **duas correntes entrando nas terminações com ponto de seus respectivos enrolamentos produzem forças magneto motrizes que se somam**. Se **uma corrente entrar por um terminal com ponto de um enrolamento e outra sair de outro terminal com ponto, então as forças magneto motrizes se subtrairão uma da outra**","x":-380,"y":-100,"width":600,"height":370},
+		{"id":"2b54278972ca9da0","type":"file","file":"Máquinas Elétricas/IMAGENS/Pasted image 20240804194520.png","x":300,"y":-115,"width":747,"height":400},
+		{"id":"12fc8008ad2b36eb","type":"text","text":"Na situação mostrada na Figura acima, a corrente primária produz uma força magneto motriz positiva $F_{P} = N_P\\cdot i_P$ e a corrente secundária produz uma força magneto motriz negativa $F_S = N_S\\cdot i_S$. Portanto, a força magneto motriz líquida no núcleo \ndeve ser\n\n$$\nF_{liq} = N_P \\cdot i_P - N_S \\cdot i_S\n$$","x":409,"y":360,"width":530,"height":200},
+		{"id":"6e7292f7330ab1f2","type":"text","text":"Essa força magneto motriz líquida **deve produzir o fluxo líquido no núcleo,** de modo que a força magneto motriz líquida deve ser igual a:\n$$\nF_{liq} = \\phi \\cdot R\n$$","x":1020,"y":380,"width":380,"height":160},
+		{"id":"6142a4be0774ecc7","type":"text","text":"Se a relutância do núcleo for praticamente 0, como é esperado que seja para materiais ferromagnéticos antes da saturação, a relação entre as correntes de $\\frac{1}{a}$ permanece a mesma.","x":700,"y":660,"width":530,"height":108},
+		{"id":"80b9cb7801c132bd","type":"text","text":"Para que a força magneto motriz seja aproximadamente zero, **a corrente deve entrar no terminal com ponto e sair do outro terminal com ponto.** As polaridades das tensões devem ser aplicadas do mesmo modo em relação aos pontos em cada enrolamento para fazer cada corrente circular no sentido necessário. (As polaridades das tensões também poderão ser determinadas pela lei de Lenz se a construção das bobinas do transformador estiver visível.)","x":700,"y":800,"width":530,"height":280}
+	],
+	"edges":[
+		{"id":"422817fb4b686f64","fromNode":"c61807b4a8f90187","fromSide":"right","toNode":"2b54278972ca9da0","toSide":"left"},
+		{"id":"0f2eb745abc6b3a8","fromNode":"2b54278972ca9da0","fromSide":"bottom","toNode":"12fc8008ad2b36eb","toSide":"top"},
+		{"id":"7184a3c84c3ae34d","fromNode":"12fc8008ad2b36eb","fromSide":"right","toNode":"6e7292f7330ab1f2","toSide":"left"},
+		{"id":"4fb81bb24cb9964a","fromNode":"12fc8008ad2b36eb","fromSide":"bottom","toNode":"6142a4be0774ecc7","toSide":"top"},
+		{"id":"18a8eb6d1c256229","fromNode":"6e7292f7330ab1f2","fromSide":"bottom","toNode":"6142a4be0774ecc7","toSide":"top"},
+		{"id":"5a1f3d28375f2713","fromNode":"6142a4be0774ecc7","fromSide":"bottom","toNode":"80b9cb7801c132bd","toSide":"top"}
+	]
+}

@@ -1,0 +1,6 @@
+Qualquer modelo exato do comportamento de um transformador deve ser capaz de levar em consideração as perdas que ocorrem nos transformadores reais. Os itens principais que devem ser incluídos na construção de tal modelo são:
+
+1. Perdas no cobre ($I^2 \cdot R$). As perdas no cobre são as perdas devido ao aquecimento resistivo nos enrolamentos primário e secundário do transformador. Elas são proporcionais ao quadrado da corrente nos enrolamentos. 
+2. Perdas por corrente parasita. **As perdas por corrente parasita são perdas devidas ao aquecimento resistivo no núcleo do transformador**. Elas são proporcionais ao quadrado da tensão aplicada ao transformador. 
+3. Perdas por histerese. **As perdas por histerese estão associadas à alteração da configuração dos domínios magnéticos no núcleo durante cada semiciclo**, como explicado no Capítulo 1. Elas são uma função não linear, complexa, da tensão aplicada ao transformador. 
+4. Fluxo de dispersão. Os fluxos $\phi_{DP}$ e $\phi_{DS}$ que escapam do núcleo e passam através de apenas um dos enrolamentos do transformador são fluxos de dispersão. **Esses fluxos que se dispersaram produzem uma indutância de dispersão nas bobinas primária e secundária**. Seus efeitos devem ser levados em consideração.
