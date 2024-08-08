@@ -1,0 +1,1 @@
+É interessante notar que no autotransformador nem toda a potência que se desloca do primário para o secundário passa através dos enrolamentos. Como resultado, se as ligações de um transformador convencional forem refeitas na forma de autotransformador, ele poderá trabalhar com potência muito maior do que com sua potência nominal original.
