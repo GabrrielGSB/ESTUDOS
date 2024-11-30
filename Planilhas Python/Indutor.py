@@ -17,7 +17,9 @@ class Indutor:
                         deltaTemp     =1,
                         densiCorrente =1,
                         usoJanela     =1,
-                        formaOnda     ="senoide"):
+                        dutyCicle     =1,
+                        formaOnda     ="senoide",
+                        tipoTransf    ="tipo 3" ):
         
         self.tensaoEntrada = tensaoEntrada #[V]
         self.tensaoSaida   = tensaoSaida   #[V]
@@ -32,7 +34,9 @@ class Indutor:
         self.usoJanela     = usoJanela     #[Ku]
         self.fatorForma    = 0             #[Kf]
         self.formaOnda     = formaOnda 
+        self.dutyCicle     = dutyCicle
 
+        self.tipoTransformador = tipoTransf
         self.resistividadeCobre = 68.5  #[μΩ/cm] p/ 100°C (constante)
 
     def calculoProjetoTransformador(self):
@@ -72,12 +76,13 @@ class Indutor:
         self.calculoElevacaoTemp()
         self.calculoFatorUtilizacaoJanela()
 
-   
-
+    # def calculoProjetoTransformadorAltaFreq(self):
 
     def definirFormaOnda(self):
         if self.formaOnda == "senoide":
             self.fatorForma = 4.44
+        elif self.formaOnda == "quadrada":
+            self.fatorForma = 4
 
     def introducao(self):
         print("Defina algumas constantes tabeladas com base em Ap calculado. Sendo...")
@@ -120,12 +125,20 @@ class Indutor:
     def definirAreaFioSec_cm2(self):
         self.areaFioSec_mm2 = float(input("A área do fio secundário é [mm2]: "))
         self.areaFioSec_cm2 = self.areaFioSec_mm2 / 100
-        
-    def calcularPotenciaTotal(self):
-        self.potenciaTotal = self.potenciaSaida * (2 * sqrt(2)) 
-
+    
     def definirAreaSuperficie(self):
         self.areaSuperficie = float(input("A área da superfície escolhida é: "))
+
+    def definirConstantes_K_M_N(self):
+        self.k = float(input("A constante K é: "))
+        self.m = float(input("A constante M é: "))
+        self.n = float(input("A constante N é: "))
+
+    def calcularPotenciaTotal(self):
+        if self.tipoTransformador == "tipo 3":
+            self.potenciaTotal = self.potenciaSaida * (2 * sqrt(2))
+        elif self.tipoTransformador == "tipo 1":
+            self.potenciaTotal = self.potenciaSaida * (2)
 
     def calcularAp(self):
         self.Ap = ((self.potenciaTotal * 1e4) / 
@@ -201,6 +214,20 @@ class Indutor:
         self.usoJanelaPri = (self.numEspirasPri * self.secaoFioPri) / (self.Aw)
         self.usoJanelaSec = (self.numEspirasSec * self.secaoFioSec) / (self.Aw)
         self.usoJanelaCalculado = self.usoJanelaPri + self.usoJanelaSec
+
+    def calcularPerdaWattKilo(self):
+        self.wattKiloCalculado = self.k * self.frequencia**(self.m) * self.densiFluxo**(self.n)
+
+    def calcularSkinEfect(self):
+        self.skinEfect = (6.62 /
+                          sqrt(self.frequencia))
+    
+    def calcularDiametroMaxFio(self):
+        self.diametroMaxFio = 2 * self.skinEfect
+
+    def calcularCorrenteEntradaAltaFreq(self):
+        self.correntePri = (self.potenciaSaida / self.tensaoEntrada) * ((sqrt(2*self.dutyCicle)) / 
+                                                                        (2*self.dutyCicle))
 
     def mostrarResultados(self):
         print("\nRESULTADOS")
