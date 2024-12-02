@@ -54,14 +54,14 @@ class Indutor:
         #Calculos do Primário
         self.calcularNumEspirasPri()
         self.calcularCorrenteEntrada()
-        self.calcularSecaoFioPriCalculada()
+        self.calcularSecaoFioPri()
         self.calcularNumFiosParalelosPri()
         self.calcularResistenciaPri()
         self.calcularPerdasCobrePri()
 
         #Calculos do Secundário
         self.calcularNumEspirasSec()
-        self.calcularSecaoFioSecCalculada()
+        self.calcularSecaoFioSec()
         self.calcularNumFiosParalelosSec()
         self.calcularResistenciaSec()
         self.calcularPerdasCobreSec()
