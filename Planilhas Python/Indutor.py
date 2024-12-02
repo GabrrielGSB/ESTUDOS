@@ -6,215 +6,300 @@ def ceil(x):
     return m.ceil(x)
 
 class Indutor:
-    def __init__(self,  tensaoEntrada =1, 
-                        tensaoSaida   =1,
-                        potenciaSaida =1,
-                        frequencia    =1,
-                        correnteSaida =1,
-                        rendimento    =1,
-                        regulacao     =1,
-                        densiFluxo    =1,
-                        deltaTemp     =1,
-                        densiCorrente =1,
-                        usoJanela     =1,
-                        dutyCicle     =1,
-                        formaOnda     ="senoide",
-                        tipoTransf    ="tipo 3" ):
+    def __init__(self,  tensaoEntrada  =1,
+                        tensaoEficaz   =1, 
+                        tensaoSaida    =1,
+                        correnteSaida  =1,
+                        correnteEficaz =1,
+                        potenciaSaida  =1,
+                        frequencia     =1,
+                        rendimento     =1,
+                        regulacao      =1,
+                        densiFluxo     =1,
+                        deltaTemp      =1,
+                        densiCorrente  =1,
+                        usoJanela      =1,
+                        dutyCicle      =1,
+                        formaOnda      ="senoide",
+                        tipoTransf     ="tipo 1" ):
         
-        self.tensaoEntrada = tensaoEntrada #[V]
-        self.tensaoSaida   = tensaoSaida   #[V]
-        self.potenciaSaida = potenciaSaida #[W]
-        self.frequencia    = frequencia    #[Hz]
-        self.correnteSaida = correnteSaida #[A]
-        self.rendimento    = rendimento    #[η]
-        self.regulacao     = regulacao     #[α]
-        self.densiFluxo    = densiFluxo    #[T]
-        self.deltaTemp     = deltaTemp     #[°C]
-        self.densiCorrente = densiCorrente #[A/cm2]
-        self.usoJanela     = usoJanela     #[Ku]
-        self.fatorForma    = 0             #[Kf]
-        self.formaOnda     = formaOnda 
-        self.dutyCicle     = dutyCicle
+        self.tensaoEntrada  = tensaoEntrada #[V]
+        self.tensaoSaida    = tensaoSaida   #[V]
+        self.potenciaSaida  = potenciaSaida #[W]
+        self.frequencia     = frequencia    #[Hz]
+        self.correnteSaida  = correnteSaida #[A]
+        self.rendimento     = rendimento    #[η]
+        self.regulacao      = regulacao     #[α]
+        self.densiFluxo     = densiFluxo    #[T]
+        self.deltaTemp      = deltaTemp     #[°C]
+        self.densiCorrente  = densiCorrente #[A/cm2]
+        self.usoJanela      = usoJanela     #[Ku]
+        self.fatorForma     = 0             #[Kf]
+        self.tensaoEficaz   = tensaoEficaz
+        self.correnteEficaz = correnteEficaz
+        self.formaOnda      = formaOnda 
+        self.dutyCicle      = dutyCicle
 
         self.tipoTransformador = tipoTransf
         self.resistividadeCobre = 68.5  #[μΩ/cm] p/ 100°C (constante)
 
-    def calculoProjetoTransformador(self):
+    def calcularProjetoTransformador(self):
+        #Considerações iniciais
         self.definirFormaOnda()
         self.calcularPotenciaTotal()
-        self.calcularAp()
-        self.introducao()
-        self.definirAw()
-        self.definirAe()
-        self.definirApChapa()
+        self.calcularProdutoAreas()
+        self.definicoesTabeladasTrasformador()
+        self.calcularDensiCorrente()
+
+        #Calculos do Primário
         self.calcularNumEspirasPri()
-        self.verificarDensiCorrente()
         self.calcularCorrenteEntrada()
-        self.calcularSecaoFioPri()
-        self.definirAWGpri()
-        self.definirAreaFioPri_cm2()
-        self.calculoNumFiosParalelosPri()
-        self.definirComprimentoEspiraPri()
-        self.calculoResistenciaPri()
-        self.calculoPerdasCobrePri()
-        self.calculoNumEspirasSec()
-        self.calcularSecaoFioSec()
-        self.definirAWGsec()
-        self.definirAreaFioSec_cm2()
-        self.calculoNumFiosParalelosSec()
-        self.definirComprimentoEspiraSec()
-        self.calculoResistenciaSec()
-        self.calculoPerdasCobreSec()
-        self.calculoPerdasTotaisCobre()
-        self.verificarRegulacaoTensao()
+        self.calcularSecaoFioPriCalculada()
+        self.calcularNumFiosParalelosPri()
+        self.calcularResistenciaPri()
+        self.calcularPerdasCobrePri()
+
+        #Calculos do Secundário
+        self.calcularNumEspirasSec()
+        self.calcularSecaoFioSecCalculada()
+        self.calcularNumFiosParalelosSec()
+        self.calcularResistenciaSec()
+        self.calcularPerdasCobreSec()
+
+        #Calculos Gerais
+        self.calcularPerdasTotaisCobre()
+        self.calcularRegulacaoTensao()
         self.definirPerdaWattKilo()
         self.definirDimensoesNucleo()
-        self.definirAreaSuperficie()
-        self.calculoPerdasAcoSilicio()
-        self.calculoPerdasTotais()
-        self.calculoWattArea()
-        self.calculoElevacaoTemp()
-        self.calculoFatorUtilizacaoJanela()
+        self.calcularPerdasAcoSilicio()
+        self.calcularPerdasTotais()
+        self.calcularWattArea()
+        self.calcularElevacaoTemp()
+        self.calcularFatorUtilizacaoJanela()
 
-    # def calculoProjetoTransformadorAltaFreq(self):
+    def calcularProjetoTransformadorAltaFreq(self):
+        #Considerações iniciais
+        self.definirFormaOnda()
+        self.calcularPotenciaTotal()
+        self.calcularProdutoAreas()
+        self.definicoesTabeladasTrasformador()
+
+        #Calculos do Primário
+        self.calcularNumEspirasPri()
+        self.calcularCorrenteEntradaAltaFreq()
+        self.calcularSkinEfect()
+        self.calcularDiametroMaxFio()
+        self.calcularSecaoFioPriAltaFreq()
+        self.calcularNumFiosParalelosPri()
+
+        #Calculos do Secundário
+        self.calcularNumEspirasSecAltaFreq()
+        self.calcularCorrenteSaidaAltaFreq()
+        self.calcularSecaoFioSecAltaFreq()
+        self.calcularNumFiosParalelosSec()
+        self.calcularFatorUtilizacaoJanela()
+
+    # def calcularProjetoIndutorBaixaFreq(self):
 
     def definirFormaOnda(self):
-        if self.formaOnda == "senoide":
+        if   self.formaOnda == 'senoide':
             self.fatorForma = 4.44
-        elif self.formaOnda == "quadrada":
+        elif self.formaOnda == 'quadrada':
             self.fatorForma = 4
 
-    def introducao(self):
-        print("Defina algumas constantes tabeladas com base em Ap calculado. Sendo...")
-        print(f"Ap = {self.Ap:.2f} [cm4]")
+        print(f"\n► A forma de onda escolhida é uma \033[31m{self.formaOnda}\033[0m, ")
+        print(f"com fator de forma de \033[31m{self.fatorForma}\033[0m\n")
+
+    def definicoesTabeladasTrasformador(self):
+        print(f"► O produto das Áreas calculado é \033[31m{self.Ap:.2f}\033[0m [cm4]\n")
+        print("● Defina algumas constantes tabeladas com base em Ap (Produto de Areas) calculado.")
+        self.definirAw()
+        self.definirAe()
+        self.definirApTabelado()
+        self.definirCaminhoMedioEspira()
+        self.definirAreaSuperficie()
+        self.definirDensidadeCorrente()
 
     def definirAw(self):
-        self.Aw = int(input("Área da Janela (Aw) escolhida [cm2]: "))
+        self.Aw = float(input(" ▻ Área da Janela (Aw) tabelada [cm2]: "))
 
     def definirAe(self):
-        self.Ae = int(input("Área da seção transversal (Ae) escolhida [cm2]: "))
+        self.Ae = float(input(" ▻ Área da seção transversal (Ae) tabelada [cm2]: "))
 
-    def definirApChapa(self):
-        self.ApChapa = self.Aw * self.Ae
+    def definirApTabelado(self):
+        self.ApTabelado = self.Aw * self.Ae
+        print(f"\n► O produto das áreas tabelado é \033[31m{self.ApTabelado:.3f}\033[0m [cm4]\n")
 
     def definirAWGpri(self):
-        self.AWGpri = input("O AWG escolhido para o primário é: ")
+        self.AWGpri = input(" ▻ O AWG escolhido para o Primário com base no Diâmetro Máximo: ")
 
     def definirAWGsec(self):
-        self.AWGsec = input("O AWG escolhido para o secundário é: ")
+        self.AWGsec = input("\n ▻ O AWG escolhido para o Secundário com base no Diâmetro Máximo: ")
     
-    def definirComprimentoEspiraPri(self):
-        self.comprimentoFioPri = int(input("O comprimento da espira (MLT) primária escolhida é [cm]: "))
+    def definirCaminhoMedioEspira(self):
+        self.MLTfioPri = float(input(" ▻ O comprimento da espira (MLT) tabelado [cm]: "))
+        self.MLTfioSec = self.MLTfioPri
     
-    def definirComprimentoEspiraSec(self):
-        self.comprimentoFioSec = int(input("O comprimento da espira (MLT) secundária escolhida é [cm]: "))
-
     def definirPerdaWattKilo(self):
         self.wattKiloAperam = float(input("A perda em W/Kg Tabelada para o núcleo escolhido é: "))
     
-    def definirDimensoesNucleo(self):
-        self.areaLamina_cm2    = int(input("Definir Área da Lámina do transformador [cm^2]: "))
-        self.empilhamento_cm   = int(input("Definir Empilhamento de Láminas do transformador [cm]: "))
-        self.areaLamina_inch2  = self.areaLamina_cm2 * 0.155
-        self.empilhamento_inch = self.empilhamento_cm / 2.54
+    def definirDimensoesNucleo(self, pesoTabelado=True):
+        if pesoTabelado != True:
+            self.areaLamina_cm2    = int(input("Definir Área da Lámina do transformador [cm^2]: "))
+            self.empilhamento_cm   = int(input("Definir Empilhamento de Láminas do transformador [cm]: "))
+            self.areaLamina_inch2  = self.areaLamina_cm2 * 0.155
+            self.empilhamento_inch = self.empilhamento_cm / 2.54
+            self.pesoEstimado      = self.areaLamina_inch2 * self.empilhamento_inch * 0.125
+        else:
+            self.pesoEstimado = float(input("O peso estimado tabelado do núcleo é: "))
 
-    def definirAreaFioPri_cm2(self):
-        self.areaFioPri_mm2 = float(input("A área do fio primário é [mm2]: "))
+        self.definirAreaSuperficie()
+
+    def definirBitolaFioPri(self):
+        self.areaFioPri_mm2 = float(input(" ▻ A Área do Fio Primário tabelada é [mm2]: "))
         self.areaFioPri_cm2 = self.areaFioPri_mm2 / 100
+        print(f"\n► A Área do Fio Primário tabelada é \033[31m{self.areaFioPri_cm2:.4f}\033[0m [cm2]")
 
-    def definirAreaFioSec_cm2(self):
-        self.areaFioSec_mm2 = float(input("A área do fio secundário é [mm2]: "))
+    def definirBitolaFioSec(self):
+        self.areaFioSec_mm2 = float(input(" ▻ A Área do Fio Secundário tabelada é [mm2]: "))
         self.areaFioSec_cm2 = self.areaFioSec_mm2 / 100
+        print(f"\n► A Área do Fio Secundário tabelada é \033[31m{self.areaFioPri_cm2:.4f}\033[0m [cm2]")
     
     def definirAreaSuperficie(self):
-        self.areaSuperficie = float(input("A área da superfície escolhida é: "))
+        self.areaSuperficie = float(input(" ▻ A Área da Superfície (At) tabelada [cm2]: "))
 
     def definirConstantes_K_M_N(self):
         self.k = float(input("A constante K é: "))
         self.m = float(input("A constante M é: "))
         self.n = float(input("A constante N é: "))
 
+    def definirDensidadeCorrente(self):
+        self.densiCorrenteEscolhida = float(input(" ▻ A Densidade de Corrente (J) tabelada [A/cm2]: ")) 
+
     def calcularPotenciaTotal(self):
         if self.tipoTransformador == "tipo 3":
             self.potenciaTotal = self.potenciaSaida * (2 * sqrt(2))
         elif self.tipoTransformador == "tipo 1":
-            self.potenciaTotal = self.potenciaSaida * (2)
+            self.potenciaTotal = self.potenciaSaida * ((1/self.rendimento) + 1)
 
-    def calcularAp(self):
+        print(f"► O tipo de transformador escolhido é o \033[31m{self.tipoTransformador}\033[0m, ")
+        print(f"com potência total de \033[31m{self.potenciaTotal:.3f}\033[0m [W]\n")
+
+    def calcularPotenciaAparente(self):
+        self.potenciaAparente = self.tensaoEficaz * self.correnteEficaz
+        print(f"\n► A Potência Aparente (VA) calculada é \033[31m{self.potenciaAparente:.4f}\033[0m")
+
+    def calcularProdutoAreas(self):
         self.Ap = ((self.potenciaTotal * 1e4) / 
                    (self.densiFluxo * self.frequencia * self.densiCorrente * self.usoJanela * self.fatorForma))  
         
+    def calcularProdutoAreasIndutor(self):
+        self.Ap = ((self.potenciaAparente * 1e4) /
+                   (self.densiFluxo * self.frequencia * self.densiCorrente * self.usoJanela * self.fatorForma))
+        print(f"\n► O Produto das Áreas (Ap) para o Indutor é \033[31m{self.Ap:.3f}\033[0m")
+
+    def calcularNumEspirasIndutor(self):
+        self.numEspirasIndutor = ((self.tensaoIndutor * 1e4)/
+                                  (self.fatorForma * self.densiCorrente * self.frequencia * self.secaoNucleo))
+        print(f"\n► O Número de Espiras (Nl) do indutor é \033[31m{self.numEspirasIndutor:.4f}\033[0m")
+
     def calcularNumEspirasPri(self):
         self.numEspirasPri   = ceil(((self.tensaoEntrada * 1e4) / 
                                      (self.fatorForma * self.densiFluxo * self.frequencia * self.Ae)))
+        print(f"\n► O Número de Espiras no Primário (Np) é \033[31m{self.numEspirasPri}\033[0m")
 
-    def calculoNumEspirasSec(self):
-        self.numEspirasSec = ceil(((self.numEspirasPri * self.tensaoSaida) / 
-                                   (self.tensaoEntrada)) * (1 + self.regulacao / 100))
-    
-    def verificarDensiCorrente(self):
-        self.densiCorrenteTeste = ((self.potenciaTotal * 1e4) / 
-                                   (self.fatorForma * self.usoJanela * self.densiFluxo * self.frequencia * self.ApChapa))
+    def calcularNumEspirasSec(self):
+        self.numEspirasSec = ceil(((self.numEspirasPri * self.tensaoSaida) / (self.tensaoEntrada)) * (1 + self.regulacao / 100))
+        
+    def calcularDensiCorrente(self):
+        self.densiCorrenteCalculada = ((self.potenciaTotal * 1e4) / 
+                                       (self.fatorForma * self.usoJanela * self.densiFluxo * self.frequencia * self.ApTabelado))
     
     def calcularCorrenteEntrada(self):
-        self.correntePri = ((self.potenciaSaida) / 
-                            (self.tensaoEntrada * self.rendimento))
+        self.correnteEntrada = ((self.potenciaSaida) / 
+                                (self.tensaoEntrada * self.rendimento))
 
     def calcularSecaoFioPri(self):
-        self.secaoFioPri   = ((self.correntePri / 
-                               self.densiCorrente))
+        self.secaoFioPriCalculada   = ((self.correnteEntrada / 
+                                        self.densiCorrenteCalculada))
+        print(f"\nA seção do calculada é {self.secaoFioPriCalculada:.4f} [cm2]")
+        self.definirAWGpri()
+        self.definirBitolaFioPri()
+
+    def calcularSecaoFioPriAltaFreq(self):
+        self.secaoFioPriCalculada = ((self.correnteEntrada / 
+                                      self.densiCorrenteEscolhida))
+        print(f"► A Seção do Fio Primário (Awpri) calculada é \033[31m{self.secaoFioPriCalculada:.4f}\033[0m [cm2]\n")
+        self.definirAWGpri()
+        self.definirBitolaFioPri()
 
     def calcularSecaoFioSec(self):
-        self.secaoFioSec = ((self.correnteSaida / 
-                             self.densiCorrente))
+        self.secaoFioSecCalculada = ((self.correnteSaida / 
+                                      self.densiCorrenteCalculada))
+        print(f"\nA seção do calculada é {self.secaoFioSecCalculada:.4f} [cm2]")
+        self.definirAWGsec()
+        self.definirBitolaFioSec()
 
-    def calculoNumFiosParalelosPri(self):
-        self.numFiosPriParalelos = ceil((self.secaoFioPri) /
-                                        (self.areaFioPri_cm2))
+    def calcularSecaoFioSecAltaFreq(self):
+        self.secaoFioSecCalculada = ((self.correnteSaida / 
+                                      self.densiCorrenteEscolhida))
+        print(f"\n► A Seção do Fio Secundário (Awsec) calculada é \033[31m{self.secaoFioSecCalculada:.4f}\033[0m [cm2]")
+        self.definirAWGsec()
+        self.definirBitolaFioSec()
+
+    def calcularNumFiosParalelosPri(self):
+        self.numFiosPriParalelos = ((self.secaoFioPriCalculada) /
+                                    (self.areaFioPri_cm2))
+        print(f"\n► O Número de Fios em Paralelo calculados para o Primário é \033[31m{round(self.numFiosPriParalelos,0)}\033[0m")
     
-    def calculoNumFiosParalelosSec(self):
-        self.numFiosSecParalelos = ceil((self.secaoFioSec) /
-                                        (self.areaFioSec_cm2))
+    def calcularNumFiosParalelosSec(self):
+        self.numFiosSecParalelos = ((self.secaoFioSecCalculada) /
+                                    (self.areaFioSec_cm2))
+        print(f"\n► O Número de Fios em Paralelo calculados para o Secundário é \033[31m{round(self.numFiosSecParalelos,0)}\033[0m")
 
-    def calculoResistenciaPri(self):
-        self.resistenciaPri   = ((self.comprimentoFioPri * self.numEspirasPri * self.resistividadeCobre * 1e-6) / 
+    def calcularResistenciaPri(self):
+        self.resistenciaPri   = ((self.MLTfioPri * self.numEspirasPri * self.resistividadeCobre * 1e-6) / 
                                  (self.numFiosPriParalelos))
 
-    def calculoResistenciaSec(self):
-        self.resistenciaSec = ((self.comprimentoFioSec * self.numEspirasSec * self.resistividadeCobre *1e-6) / 
+    def calcularResistenciaSec(self):
+        self.resistenciaSec = ((self.MLTfioSec * self.numEspirasSec * self.resistividadeCobre *1e-6) / 
                                (self.numFiosSecParalelos))
 
-    def calculoPerdasCobrePri(self):
-        self.perdaCobrePri = self.correntePri**2 * self.resistenciaPri
+    def calcularPerdasCobrePri(self):
+        self.perdaCobrePri = self.correnteEntrada**2 * self.resistenciaPri
          
-    def calculoPerdasCobreSec(self):
+    def calcularPerdasCobreSec(self):
         self.perdaCobreSec = self.correnteSaida**2 * self.resistenciaSec
     
-    def calculoPerdasTotaisCobre(self):
+    def calcularPerdasTotaisCobre(self):
         self.perdasTotaisCobre = self.perdaCobrePri + self.perdaCobreSec
     
-    def verificarRegulacaoTensao(self):
+    def calcularRegulacaoTensao(self):
         self.regulacaoCalculada = (100 * (self.perdasTotaisCobre / 
                                           self.potenciaSaida))
 
-    def calculoPerdasAcoSilicio(self):
-        self.pesoEstimado = self.areaLamina_inch2 * self.empilhamento_inch * 0.125
+    def calcularPerdasAcoSilicio(self):
         self.perdaFerro   = self.wattKiloAperam * self.pesoEstimado
     
-    def calculoPerdasTotais(self):
+    def calcularPerdasTotais(self):
         self.perdaTotal = self.perdasTotaisCobre + self.perdaFerro
     
-    def calculoWattArea(self):
+    def calcularWattArea(self):
         self.wattsPorArea = self.perdaTotal / self.areaSuperficie
     
-    def calculoElevacaoTemp(self):
+    def calcularElevacaoTemp(self):
         self.elevTemp = 450 * pow(self.wattsPorArea, 0.826)
     
-    def calculoFatorUtilizacaoJanela(self):
-        self.usoJanelaPri = (self.numEspirasPri * self.secaoFioPri) / (self.Aw)
-        self.usoJanelaSec = (self.numEspirasSec * self.secaoFioSec) / (self.Aw)
-        self.usoJanelaCalculado = self.usoJanelaPri + self.usoJanelaSec
+    def calcularFatorUtilizacaoJanela(self):
+        self.usoJanelaPri = (self.numEspirasPri * self.secaoFioPriCalculada) / (self.Aw)
+        print(f"\n► O Uso da Janela do Primário é \033[31m{self.usoJanelaPri:.4f}\033[0m")
 
+        self.usoJanelaSec = (self.numEspirasSec * self.secaoFioSecCalculada) / (self.Aw)
+        print(f"\n► O Uso da Janela do Secundário é \033[31m{self.usoJanelaSec:.4f}\033[0m")
+
+        self.usoJanelaTotal = self.usoJanelaPri + self.usoJanelaSec
+        print(f"\n► O Uso da Janela Total é \033[31m{self.usoJanelaTotal:.4f}\033[0m")
+        
     def calcularPerdaWattKilo(self):
         self.wattKiloCalculado = self.k * self.frequencia**(self.m) * self.densiFluxo**(self.n)
 
@@ -224,57 +309,21 @@ class Indutor:
     
     def calcularDiametroMaxFio(self):
         self.diametroMaxFio = 2 * self.skinEfect
+        print(f"\n► O diâmetro máximo que um fio pode ter é \033[31m{self.diametroMaxFio:.4f}\033[0m [cm] ou \033[31m{(self.diametroMaxFio*10):.4f}\033[0m [mm]\n")
 
     def calcularCorrenteEntradaAltaFreq(self):
-        self.correntePri = (self.potenciaSaida / self.tensaoEntrada) * ((sqrt(2*self.dutyCicle)) / 
-                                                                        (2*self.dutyCicle))
+        self.correnteEntrada = (self.potenciaSaida / self.tensaoEntrada) * ((sqrt(2*self.dutyCicle)) / 
+                                                                            (2*self.dutyCicle))
+        print(f"\n► A Corrente de Entrada (Ipri) é \033[31m{self.correnteEntrada:.3f}\033[0m [A]")
 
-    def mostrarResultados(self):
-        print("\nRESULTADOS")
-        print(f"A forma de onda escolhida foi {self.formaOnda}, logo o fator de forma é {self.fatorForma}")
-        print(f"A potência total calculada é {self.potenciaTotal:.4f} [W]\n")
+    def calcularNumEspirasSecAltaFreq(self):
+        self.numEspirasSec = ceil((self.tensaoSaida / self.tensaoEntrada) * (1 / (2*self.dutyCicle) * self.numEspirasPri))
+        print(f"\n► O Número de Espiras no Secundário (Ns) é \033[31m{self.numEspirasSec}\033[0m")
 
-        print(f"O produto das áreas calculado é {self.Ap:.4f} [cm4]")
-        print(f"A área da janela usada é {self.Aw} [cm2]")
-        print(f"A área da seção transversal é {self.Ae} [cm2]")
-        print(f"Portanto o produto das áreas da chapa escolhida é {self.ApChapa} [cm4],")
-        print(f"e densidade de corrente calculada é {self.densiCorrenteTeste:.4f} [A/cm2]\n")
+    def calcularCorrenteSaidaAltaFreq(self):
+        self.correnteSaida = (self.potenciaSaida / self.tensaoSaida) * sqrt(2 * self.dutyCicle)
+        print(f"\n► A Corrente de Saída (Io) é \033[31m{self.correnteSaida:.3f}\033[0m [A]")
 
-        print(f"O número de espiras do primário é {self.numEspirasPri}")
-        print(f"A corrente no primário é {self.correntePri:.4f} [A]")
-        print(f"Assim é preciso de uma seção de fio na bobina do primário de {self.secaoFioPri:.4f} [cm2]")
-        print(f"Logo o AWG escolhido para o primário é {self.AWGpri}")
-        print(f"O que gera uma seção de fio de {self.areaFioPri_cm2} [cm2]")
-        print(f"Com isso o número de fios em paralelo no primário é {self.numFiosPriParalelos}")
-        print(f"Assim é preciso de um comprimento de fio de {self.comprimentoFioPri} [cm]")
-        print(f"Por fim, essa configuração gera uma resistência na bobina do primário de {self.resistenciaPri:.4f} [Ω],")
-        print(f"que gera uma perda ohmica de {self.perdaCobrePri:.4f} [W]\n")
-
-        print(f"O número de espiras do secundário é {self.numEspirasSec}")
-        print(f"A corrente no secundário é {self.correnteSaida} [A]")
-        print(f"O que gera uma seção de fio para o secundário de {self.secaoFioSec:.4f} [cm2]")
-        print(f"O AWG escolhido para o secundário é {self.AWGsec},")
-        print(f"O que gera uma seção de fio de {self.areaFioSec_cm2} [cm2]")
-        print(f"Com isso o número de fios em paralelo no secundário é {self.numFiosSecParalelos}")
-        print(f"Assim é preciso de um comprimento de fio de {self.comprimentoFioSec} [cm]")
-        print(f"Por fim, essa configuração gera uma resistência na bobina do secundário de {self.resistenciaSec:.4f} [Ω],")
-        print(f"que gera uma perda ohmica de {self.perdaCobreSec:.4f} [W]\n")
-
-        print(f"As perdas ohmicas totais são {self.perdasTotaisCobre:.4f} [W]")
-        print(f"Isso faz com que a regulação do transformador fique em {self.regulacaoCalculada:.4f} [%]")
-        print(f"Agora a perda em W/Kg defina pela tabela é {self.wattKiloAperam}")
-        print(f"O peso estimado do transformador é {self.pesoEstimado:.4f} [Kg]\n")
-
-        print(f"Isso gera uma perda no ferro de {self.perdaFerro:.4f} [W]")
-        print(f"Portanto, as perdas totais no transformador são {self.perdaTotal:.4f} [W],")
-        print(f"o que gera uma perda por unidade de área de {self.wattsPorArea:.4f} [W/cm2]")
-        print(f"Desse modo, a elevação de temperatura do gerador é {self.elevTemp:.4f} [°C]\n")
-
-        print(f"Por fim, o fator de utilização do primário é {self.usoJanelaPri:.4f},")
-        print(f"e o uso da janela do secundário é {self.usoJanelaSec:.4f}")
-        print(f"Isso gera um fator de utilização total de {self.usoJanelaCalculado:.4f}")
-
-
-                                
+    
 
 
